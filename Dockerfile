@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-setuptools \
     && rm -rf /var/lib/apt/lists/*
 
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
 RUN pip3 install --break-system-packages yt-dlp
 
 WORKDIR /app
